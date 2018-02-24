@@ -8,6 +8,6 @@ main.o: main.cpp
 polynomial.o: polynomial.cpp
 	$(CC) $(CFLAGS) polynomial.cpp
 install:
-	$(CC) $(CFLAGS) main.cpp polynomial.cpp -o a.out
+	clear && $(CC) $(CFLAGS) main.cpp polynomial.cpp -o a.out
 clean:
 	rm a.out

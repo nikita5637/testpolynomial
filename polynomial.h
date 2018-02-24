@@ -2,7 +2,8 @@
 #ifndef POLY_H
 #define POLY_H
 
-typedef unsigned int UI;
+typedef unsigned int Tstep;
+typedef int Tcoef;
 
 /*Вычисление производной*/
 std::string Derivative(std::string polynomial);
@@ -11,10 +12,10 @@ std::string Derivative(std::string polynomial);
 std::string Polynom(std::string polynomial);
 
 /*Парсинг строки на отдельные одночлены*/
-static std::map<UI, int> Parse(std::string str);
+static std::map<Tstep, Tcoef> Parse(std::string str);
 
 /*Парсинг отдельного одночлена в пару <степень, множитель>*/
-static std::pair<UI, int> ParseTerm(std::string term);
+static std::pair<Tstep, Tcoef> ParseTerm(std::string term);
 
 /*Проверка отдельного одночлена на корректность*/
 static unsigned short int CheckTerm(std::string term);
