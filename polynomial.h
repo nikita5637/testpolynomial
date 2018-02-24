@@ -11,9 +11,6 @@ static unsigned char ChangeState(unsigned char currentState, char str);
 /*Вычисление производной*/
 std::string Derivative(std::string polynomial);
 
-/*Преобразование строки в корректный полином*/
-std::string Polynom(std::string polynomial);
-
 /*Парсинг строки на отдельные одночлены*/
 static std::map<Tstep, Tcoef> Parse(std::string str);
 
