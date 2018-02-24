@@ -1,6 +1,5 @@
 #include "polynomial.h"
 #include <iostream>
-#include <regex>
 
 std::string Generator() {
 	std::string str= "";

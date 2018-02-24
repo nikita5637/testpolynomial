@@ -5,6 +5,9 @@
 typedef unsigned int Tstep;
 typedef int Tcoef;
 
+/*Замена текущего состояния*/
+static unsigned char ChangeState(unsigned char currentState, char str);
+
 /*Вычисление производной*/
 std::string Derivative(std::string polynomial);
 
@@ -16,8 +19,5 @@ static std::map<Tstep, Tcoef> Parse(std::string str);
 
 /*Парсинг отдельного одночлена в пару <степень, множитель>*/
 static std::pair<Tstep, Tcoef> ParseTerm(std::string term);
-
-/*Проверка отдельного одночлена на корректность*/
-static unsigned short int CheckTerm(std::string term);
 
 #endif
