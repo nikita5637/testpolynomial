@@ -1,16 +1,6 @@
 #include "polynomial.h"
 
-//std::string str = "x^2+x";
-std::string str = "2*x^10-100*x^9+x^8-x^7+5*x-3*x+10-5";
-//std::string str = "x^10000+1+x";
-//std::string str = "-x^2-x^3";
-//std::string str = "x+x+x+x+x+x+x+x+x";
-//std::string str = "-notvalidstd::string++++++x^2+-13xx^2321.sd-4*x^2+4x^2";
-//std::string str = "2*x";
-//std::string str = "+00001*x+1";
-//std::string str = "";
-
-static std::pair<Tstep, Tcoef> ParseTerm(std::string term) {
+static std::pair<Tstep, Tcoef> ParseTerm(const std::string term) {
 	Tstep uintStep = 1; //степень одночлена
 	Tcoef intCoef = 1; //множитель одночлена
 	char charSign = 1; //по умолчанию одночлен положительный, иначе sign = -1
@@ -52,7 +42,7 @@ static std::pair<Tstep, Tcoef> ParseTerm(std::string term) {
 	return std::pair<Tstep, Tcoef>(uintStep, intCoef);
 }
 
-static unsigned char ChangeState(unsigned char currentState, char str) {
+static unsigned char ChangeState(const unsigned char currentState, const char str) {
 	/*смена текущего состояния конечного автомата
 	в зависимости от текущего состояния и нового символа
 	обрабатываем новый символ и переходим к новому состоянию*/
@@ -172,7 +162,7 @@ static std::map<Tstep, Tcoef> Parse(std::string str) {
 	return termMap;
 }
 
-std::string Derivative(std::string polynomial) {
+std::string Derivative(const std::string polynomial) {
 	std::map<Tstep, Tcoef> termMap = Parse(polynomial); //карта пар одночленов полинома
 
 	if (termMap.begin()->first == 0 ) {
