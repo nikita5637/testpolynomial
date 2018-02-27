@@ -1,6 +1,8 @@
+#ifndef POLYNOMIAL_H
+#define POLYNOMIAL_H
 #include <map>
-#ifndef POLY_H
-#define POLY_H
+#include <iostream>
+#include <string.h>
 
 typedef unsigned int Tstep;
 typedef int Tcoef;
@@ -17,4 +19,4 @@ static std::map<Tstep, Tcoef> Parse(std::string str);
 /*Парсинг отдельного одночлена в пару <степень, множитель>*/
 static std::pair<Tstep, Tcoef> ParseTerm(std::string term);
 
-#endif
+#endif // POLYNOMIAL_H
